@@ -88,6 +88,3 @@ def predict_api():
     output9= round(prediction9[0], 2)
     
     return jsonify(output1, output2, output3, output4, output5, output6, output7, output8, output9)
-
-if __name__=='__main__':
-    app.run(port=5000, debug=True)
