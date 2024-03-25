@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTR-8'>
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel= 'stylesheet' type= 'text/css'>
+        <link href= 'https://fonts.googleapis.com/css?family=Arimo' rel= 'stylesheet' type= 'text/css'>
+        <link href= 'https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href= 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel= 'stylesheet' tyupe= 'text/css'>
+        <link rel="stylesheet" href="./static/css/style.css" />
+    </head>
+    <body>
+        <div class="encodings_container" id="encodings_container">
+            <h3>Encodings</h3>
+            <button onclick="showEncodings()">Show Encodings</button>
+            <div class= "encodings" id='encodings'>
+                <p><strong>Shape:</strong></p>
+                <p>a. 0—Cylinder</p>
+                <p>b. 1—Cube</p>
+                <p>c. 2—Square</p>
+                <p>d. 3- Cuboid</p>
+                <p>e. 4- Rectangle</p>
+                <p><strong>Boundary_conditions:</strong></p>
+                <p>a. 0—no_slip</p>
+                <p>b. 1—free_slip</p>
+            </div>
+        </div>
+        <div class="login-container">
+            <div class='login'>
+                <h1> Nu Prediction </h1>
+                <form action='{{url_for('predict')}}' method= 'post' >
+                    <input type='float' name= "Pr" placeholder= "Enter Pr value" required= 'required'>
+                    <input type='int' name= "Ra" placeholder= "Enter Ra value" required= 'required'>
+                    <input type='int' name= "Aspect_ratio" placeholder= "Enter Aspect Ratio" required= 'required'>
+                    <input type='int' name= "Shape" placeholder= "Enter Shape" required= 'required'>
+                    <input type='int' name= "Boundary_Conditions" placeholder= "Enter Boundary Condition" required= 'required'>
+
+                    <button type= "submit" class= "btn btn-primary btn-block btn-large">Predict</button>
+                </form>
+            </div>
+            <div class="results-container">
+                <h1>Results</h1>
+                <p>Predicted value using Linear Regression is: <b>{{ prediction_text1 }}</b></p>
+                <p>Predicted value using SVM is: <b>{{ prediction_text2 }}</b></p>
+                <p>Predicted value using Random Forest is: <b>{{ prediction_text3 }}</b></p>
+                <p>Predicted value using Log+ Linear Regression is: <b>{{ prediction_text4 }}</b></p>
+                <p>Predicted value using Log+ SVM is: <b>{{ prediction_text5 }}</b></p>
+                <p>Predicted value using Log+ Random Forest is: <b>{{ prediction_text6 }}</b></p>
+                <p>Predicted value using Log+ FeedForward NN is: <b>{{ prediction_text7 }}</b></p>
+                <p>Predicted value using Log+ CNN is: <b>{{ prediction_text8 }}</b></p>
+                <p>Predicted value using Log+ RNN is: <b>{{ prediction_text9 }}</b></p>
+            </div>
+        </div>
+        <script>
+            function showEncodings() {
+                var encodingsDiv = document.getElementById("encodings");
+                if (encodingsDiv.style.display === "none") {
+                    encodingsDiv.style.display = "block";
+                } else {
+                    encodingsDiv.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+</html>
