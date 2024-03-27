@@ -20,7 +20,7 @@ cnn_model= keras.models.load_model(cnn_model_path)
 rnn_model= keras.models.load_model(rnn_model_path)
 app= Flask(__name__)
 
-@app.route('/', methods= ['GET'])
+@app.route('/')
 def home():
     return render_template('index.html')
 
