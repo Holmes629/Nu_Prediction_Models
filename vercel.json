@@ -1,8 +1,8 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/app"
+  "functions": {
+    "api": {
+      "handler": "app.handler",
+      "runtime": "python3.8"
     }
-  ]
+  }
 }
