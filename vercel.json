@@ -2,7 +2,7 @@
   "rewrites": [
       {
           "source": "(.*)",
-          "destination": "sapp.py"
+          "destination": "/app.py"
       }
   ]
 }
