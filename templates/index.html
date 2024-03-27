@@ -27,7 +27,7 @@
         <div class="login-container">
             <div class='login'>
                 <h1> Nu Prediction </h1>
-                <form action='{{url_for('predict')}}' method= 'post' >
+                <form action="{{url_for('predict')}}" method= 'post' >
                     <input type='float' name= "Pr" placeholder= "Enter Pr value" required= 'required'>
                     <input type='int' name= "Ra" placeholder= "Enter Ra value" required= 'required'>
                     <input type='int' name= "Aspect_ratio" placeholder= "Enter Aspect Ratio" required= 'required'>
