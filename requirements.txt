@@ -1,7 +1,7 @@
 Flask
-Gunicorn
 numpy
 pandas
 tensorflow
 keras
+Werkzeug
 scikit-learn
