@@ -89,5 +89,11 @@ def predict_api():
     
     return jsonify(output1, output2, output3, output4, output5, output6, output7, output8, output9)
 
+def handler(request):
+    if request.method == 'POST':
+        return predict_api()
+    elif request.method == 'GET':
+        return home()
+
 if __name__=='__main__':
     app.run(debug=True)
