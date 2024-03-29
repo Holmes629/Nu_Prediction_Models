@@ -66,17 +66,17 @@ def predict():
 def predict_api():
     data= request.get_json(force=True)
     final_features= [np.array(list(data.values()))]
-    # final_features2= [np.array([np.log(int_features[0]), np.log(int_features[1]), int_features[2], int_features[3], int_features[4]])]
+    final_features2= [np.array([np.log(final_features[0]), np.log(final_features[1]), final_features[2], final_features[3], final_features[4]])]
 
     prediction1= models['1 Linear Regression'].predict(final_features)
     prediction2= models['1 SVM'].predict(final_features)
     prediction3= models['1 Random Forest'].predict(final_features)
-    prediction4= models['2 Log Linear Regression'].predict(final_features)
-    prediction5= models['2 Log SVM'].predict(final_features)
-    prediction6= models['2 Log Random Forest'].predict(final_features)
-    prediction7= fnn_model.predict(final_features)
-    prediction8= cnn_model.predict(final_features)
-    prediction9= rnn_model.predict(final_features)
+    prediction4= models['2 Log Linear Regression'].predict(final_features2)
+    prediction5= models['2 Log SVM'].predict(final_features2)
+    prediction6= models['2 Log Random Forest'].predict(final_features2)
+    prediction7= fnn_model.predict(final_features2)
+    prediction8= cnn_model.predict(final_features2)
+    prediction9= rnn_model.predict(final_features2)
     
     output1= round(prediction1[0], 2)
     output2= round(prediction2[0], 2)
