@@ -1,7 +1,6 @@
 {
   "builds": [
       {
-<<<<<<< HEAD
           "src": "./app.py",
           "use": "@vercel/python3.9"
 
