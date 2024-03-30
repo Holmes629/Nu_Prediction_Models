@@ -2,6 +2,3 @@ Flask
 gunicorn
 numpy
 pandas
-tensorflow
-keras
-scikit-learn
