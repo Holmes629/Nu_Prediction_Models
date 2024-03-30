@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import pickle
 import numpy as np
 import pandas as pd
-import keras
+from tensorflow import keras
 import os
 
 current_directory = os.path.dirname(os.path.abspath(__file__))

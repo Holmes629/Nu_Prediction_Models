@@ -2,4 +2,4 @@ Flask
 gunicorn
 numpy
 pandas
-keras
+tensorflow
