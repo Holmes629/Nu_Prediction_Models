@@ -2,22 +2,22 @@ from flask import Flask, render_template, request, jsonify
 import pickle
 import numpy as np
 import pandas as pd
-from tensorflow import keras
+import tensorflow.keras as keras
 import os
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
 
 # Define the paths for model files using the current directory
 # models_path = os.path.join(current_directory, "Model_Packages", "ML_Models_Package.pkl")
-# fnn_model_path = os.path.join(current_directory, "Model_Packages", "FNN_Model_Package.h5")
-# cnn_model_path = os.path.join(current_directory, "Model_Packages", "CNN_Model_Package.h5")
-# rnn_model_path = os.path.join(current_directory, "Model_Packages", "RNN_Model_Package.h5")
+fnn_model_path = os.path.join(current_directory, "Model_Packages", "FNN_Model_Package.h5")
+cnn_model_path = os.path.join(current_directory, "Model_Packages", "CNN_Model_Package.h5")
+rnn_model_path = os.path.join(current_directory, "Model_Packages", "RNN_Model_Package.h5")
 
 # with open(models_path, 'rb') as f:
 #     models= pickle.load(f)
-# fnn_model= keras.models.load_model(fnn_model_path)
-# cnn_model= keras.models.load_model(cnn_model_path)
-# rnn_model= keras.models.load_model(rnn_model_path)
+fnn_model= keras.models.load_model(fnn_model_path)
+cnn_model= keras.models.load_model(cnn_model_path)
+rnn_model= keras.models.load_model(rnn_model_path)
 app= Flask(__name__)
 
 @app.route('/')
@@ -38,9 +38,9 @@ def predict():
     # prediction4= models['2 Log Linear Regression'].predict(final_features2)
     # prediction5= models['2 Log SVM'].predict(final_features2)
     # prediction6= models['2 Log Random Forest'].predict(final_features2)
-    # prediction7= fnn_model.predict(final_features3)
-    # prediction8= cnn_model.predict(final_features3)
-    # prediction9= rnn_model.predict(final_features3)
+    prediction7= fnn_model.predict(final_features3)
+    prediction8= cnn_model.predict(final_features3)
+    prediction9= rnn_model.predict(final_features3)
     
     # output1= round(prediction1[0], 2)
     # output2= round(prediction2[0], 2)
@@ -48,9 +48,9 @@ def predict():
     # output4= round(prediction4[0], 2)
     # output5= round(prediction5[0], 2)
     # output6= round(prediction6[0], 2)
-    # output7= round(prediction7[0][0], 2)
-    # output8= round(prediction8[0][0], 2)
-    # output9= round(prediction9[0][0], 2)
+    output7= round(prediction7[0][0], 2)
+    output8= round(prediction8[0][0], 2)
+    output9= round(prediction9[0][0], 2)
     
     return render_template('index.html', prediction_text1= 0,
                            prediction_text2= 0,
@@ -58,9 +58,9 @@ def predict():
                            prediction_text4= 0,
                            prediction_text5= 0,
                            prediction_text6= 0,
-                           prediction_text7= 0,
-                           prediction_text8= 0,
-                           prediction_text9= 0)
+                           prediction_text7= output7,
+                           prediction_text8= output8,
+                           prediction_text9= output9)
 
 @app.route('/predict_api', methods=['POST'])
 def predict_api():
