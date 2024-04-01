@@ -9,7 +9,7 @@ current_directory = os.path.dirname(os.path.abspath(__file__))
 
 # Define the paths for model files using the current directory
 lin_reg_path = os.path.join(current_directory, "Model_Packages", "1_Linear_Regression_Model_Package.pkl")
-svm_path = os.path.join(current_directory, "Model_Packages", "2_SVM_Model_Package.pkl")
+svm_path = os.path.join(current_directory, "Model_Packages", "1_SVM_Model_Package.pkl")
 # models_path = os.path.join(current_directory, "Model_Packages", "3_Random_Forest_Model_Package.pkl")
 log_lin_reg_path = os.path.join(current_directory, "Model_Packages", "2_Log_Linear_Regression_Model_Package.pkl")
 log_svm_path= os.path.join(current_directory, "Model_Packages", "2_Log_SVM_Model_Package.pkl")
