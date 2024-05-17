@@ -12,7 +12,7 @@ This project sets up a Flask API for predicting Nu using pre-trained ML and DL m
 ## Setup Instructions
 
 ### Step 1: Download the Project Files
-First, download the project files to your local machine. You can clone the repository into your desired folder:
+First, download the project files to your local machine. You can clone the repository into your desired folder (you need to have git installed in your machine or you can just download the zip folder and unzip it into your desired folder):
 ```bash
 git clone https://github.com/Holmes629/Nu_Prediction_Models.git
 ```
