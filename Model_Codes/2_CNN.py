@@ -14,7 +14,7 @@ print('Initializing the job..... Setting up the workspace...')
 print('Loading the datasets...')
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
-file_path = os.path.join(current_directory, "extracted_data_csv_3.csv")
+file_path = os.path.join(current_directory, "Datasets/extracted_data_csv_3.csv")
 data = pd.read_csv(file_path)
 
 print('Processing the data....')
